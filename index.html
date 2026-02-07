@@ -84,13 +84,19 @@
   .gif-container {
     display: none;
     margin-top: 25px;
-    animation: fadeIn 0.6s ease;
-  }
+    animation: reveal 0.8s ease forwards;
+}
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
   .gif-container img {
     width: 100%;
@@ -121,7 +127,7 @@
 
 <body>
 
-<div class="container">
+<div class="container" id="card">
   <!-- Cute Cartoon Couple -->
 <img 
   src="couple.png"
@@ -167,6 +173,14 @@
     result.style.display = "block";
     yesBtn.style.display = "none";
     noBtn.style.display = "none";
+     
+    // smooth scroll to message
+    result.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    // slight fade for premium feel
+    document.getElementById("card").style.transition = "0.6s ease";
+    document.getElementById("card").style.transform = "scale(1.02)";
+
     startHearts();
   });
 
