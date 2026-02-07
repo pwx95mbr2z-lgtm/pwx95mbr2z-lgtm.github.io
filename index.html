@@ -39,7 +39,13 @@
   .mascot {
     width: 200px;
     margin-bottom: 15px;
-    filter: drop-shadow(0 10px 20px rgba(255,77,109,0.35));
+    filter: drop-shadow(0 18px 30px rgba(255,77,109,0.4));
+    animation: floaty 4s ease-in-out infinite;
+  }
+
+  @keyframes floaty {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }   
   }
 
   h1 {
@@ -117,8 +123,8 @@
 
 <div class="container">
   <!-- Cute Cartoon Couple -->
-<img
-  src="https://raw.githubusercontent.com/Anmol-Baranwal/Cute-Cartoon-Images/main/couple.png"
+<img 
+  src="couple.png"
   alt="Cute Cartoon Couple"
   class="mascot"
 />
